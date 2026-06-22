@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Learn Algebra</title>
+<title>Algebra 1 – Texas TEA</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap');
 :root{--pu:#7C3AED;--pu2:#EDE9FE;--bl:#2563EB;--bl2:#DBEAFE;--gr:#059669;--gr2:#D1FAE5;--or:#EA580C;--or2:#FFEDD5;--pk:#DB2777;--pk2:#FCE7F3;--ye:#D97706;--ye2:#FEF3C7;--te:#0891B2;--te2:#CFFAFE;--re:#DC2626;--re2:#FEE2E2;--bg:#F8F7FF;--card:#fff;--txt:#1E1B4B;--mu:#6B7280}
@@ -208,9 +208,9 @@ footer{text-align:center;padding:28px 24px;color:var(--mu);font-size:12px;font-w
       <span class="ms" style="top:70%;left:88%;animation-delay:.5s;font-size:28px">y=mx+b</span>
       <span class="ms" style="top:5%;left:42%;animation-delay:1.5s;font-size:32px">f(x)</span>
     </div>
-    <div class="badge">✨ Learn Algebra</div>
-    <h1>Learn <span>Algebra</span></h1>
-    <p>Master algebra from the ground up — one concept at a time!</p>
+    <div class="badge">🤠 Texas TEA · TEKS Aligned</div>
+    <h1>Algebra <span>1</span></h1>
+    <p>Master linear functions, quadratics, and exponentials — one step at a time!</p>
     <div class="hero-btns">
       <button class="btn btn-y" onclick="startLearning()">🚀 Start Learning</button>
       <button class="btn btn-w" onclick="scrollToUnits()">📋 View All Units</button>
@@ -243,22 +243,22 @@ footer{text-align:center;padding:28px 24px;color:var(--mu);font-size:12px;font-w
     <div class="tea">
       <div class="tea-ico">⭐</div>
       <div>
-        <h3>Standards-Aligned Algebra 1 Curriculum</h3>
-        <p>Every lesson covers core Algebra 1 concepts — from linear functions to quadratics — with worked examples, practice problems, and unit tests.</p>
+        <h3>Aligned to Texas Essential Knowledge & Skills (TEKS)</h3>
+        <p>Every lesson is built on the official TEA Algebra I standards (19 TAC §111.39), adopted 2012. One high school math credit upon completion.</p>
         <div class="tea-tags">
-          <span class="ttag">Grade 8–9</span><span class="ttag">1 Credit</span><span class="ttag">120+ Problems</span><span class="ttag">8 Units</span><span class="ttag">College & Career Ready</span>
+          <span class="ttag">TEKS §111.39</span><span class="ttag">19 TAC Ch. 111</span><span class="ttag">Grade 8–9</span><span class="ttag">1 Credit</span><span class="ttag">College & Career Ready</span>
         </div>
       </div>
     </div>
   </div>
-  <footer>✨ Learn Algebra</footer>
+  <footer>🤠 Algebra 1 · Texas TEA Curriculum · TEKS §111.39</footer>
 </div>
 
 <!-- ████████  LESSON VIEW  ████████ -->
 <div id="lessonView" class="view">
   <nav class="lv-nav">
     <button class="back-btn" onclick="goHome()">← Home</button>
-    <span class="lv-brand">Learn Algebra</span>
+    <span class="lv-brand">Algebra 1</span>
     <span class="lv-title" id="lvTitle"></span>
   </nav>
   <div class="lsteps" id="lsteps"></div>
@@ -280,9 +280,9 @@ const UNITS = [
   { num:8, title:"Exponential Functions & Data", teks:"TEKS A1.9, A1.12", icon:"🚀", color:"#DC2626", light:"#FEE2E2", desc:"Analyze exponential growth & decay, interpret scatterplots.", lessons:3 },
 ];
 
-// Progress stored in memory (sessionStorage as fallback)
-let PROGRESS = JSON.parse(sessionStorage.getItem('alg1_prog') || 'null') || UNITS.map(() => ({ unitProg:0, lessonsComplete:[], workbookDone:false, testScore:null }));
-function saveP(){ try{ sessionStorage.setItem('alg1_prog', JSON.stringify(PROGRESS)); }catch(e){} }
+// Progress stored in localStorage (persists across sessions)
+let PROGRESS = JSON.parse(localStorage.getItem('alg1_prog') || 'null') || UNITS.map(() => ({ unitProg:0, lessonsComplete:[], workbookDone:false, testScore:null }));
+function saveP(){ try{ localStorage.setItem('alg1_prog', JSON.stringify(PROGRESS)); }catch(e){} }
 
 // ═══════════════════════════════════════════════
 //  LESSON CONTENT  (Unit 1 fully built; others scaffold)
